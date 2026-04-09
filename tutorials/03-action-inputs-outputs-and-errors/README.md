@@ -84,7 +84,7 @@ The front door is the input.
 The back door is the output.
 The refusal is the error.
 
-That is the whole focus for today.
+That is all we are studying today.
 
 And once you start seeing actions this way, the code becomes much easier to read.
 
@@ -176,7 +176,7 @@ They answer questions like:
 
 - should a blocked person receive a welcome card at all?
 
-That is a different kind of problem than a shape problem.
+That is not a shape problem.
 It is a domain problem.
 
 The inputs can be perfectly valid and the action can still decide, honestly and clearly, that it cannot complete the work.
@@ -193,7 +193,7 @@ The official docs for `Jido.Action.Runtime` expose `validate_params/2` as the ru
 
 That gives us a very clear way to think about the action's front door.
 
-When the action receives the wrong shape, the front door can say so clearly.
+If someone hands the action the wrong shape, the front door should say so.
 
 For example:
 
@@ -201,7 +201,7 @@ For example:
 - unsupported `audience`
 - unsupported `status`
 
-Those do not have to feel mysterious.
+Those are not mysterious failures.
 They are simply invalid requests.
 
 This is powerful because it turns a vague bug into a clean boundary.
@@ -331,7 +331,7 @@ We want to know the action can succeed and produce the promised shape.
 
 This one protects the front door.
 
-It shows that invalid input can be handled more clearly than an unexpected crash.
+It shows that invalid input is not the same thing as a mysterious crash.
 The action boundary can reject it clearly.
 
 ### Test 3
@@ -370,7 +370,7 @@ It is becoming a reliable contract.
 
 A predictable contract says:
 
-- if the input arrives in the wrong shape, I will reject it clearly
+- if you give me the wrong shape, I will reject it clearly
 - if I succeed, I will return the shape I promised
 - if the work cannot be completed, I will fail in a structured way
 
@@ -438,7 +438,7 @@ The goal is to notice which part made the action feel trustworthy to you.
 
 ## What You Should Walk Away With
 
-If this lesson landed well, you may now feel that reliability is part of the action itself, not an extra decoration around it.
+If this lesson worked, you should now feel that reliability is part of the action itself, not an extra decoration around it.
 
 An action becomes dependable when:
 
