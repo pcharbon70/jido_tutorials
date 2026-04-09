@@ -162,7 +162,7 @@ In other words:
 
 ## Step 3: Notice What the Runtime Is Quietly Doing
 
-One of the easiest mistakes at this point is to look at `Exec.run/4` and think it is only a wrapper.
+An easy first impression at this point is to look at `Exec.run/4` and think it is only a wrapper.
 
 But the docs describe much more than that.
 
@@ -273,7 +273,7 @@ Asynchronous execution says:
 
 "Start this now, and I will come back for the answer."
 
-That is all.
+That simple contrast is enough for now.
 
 It does not need to feel magical.
 
@@ -308,12 +308,12 @@ Exec.await(async_ref, 100)
 
 This is a lovely example of why the runtime layer exists.
 
-The action itself is not "wrong."
+The action itself is not necessarily "wrong."
 It is just slower than the current execution contract allows.
 
 So the runtime tells that story clearly.
 
-That is much better than a vague hang or a mysterious process failure.
+That usually feels much better than a vague hang or a mysterious process failure.
 
 ## Step 7: Cancellation Is a Choice, Not a Crash
 
@@ -543,7 +543,7 @@ The point is to notice which runtime concern suddenly made the action feel more 
 
 ## What You Should Walk Away With
 
-If this lesson worked, you should now feel that actions do not live alone.
+If this lesson landed well, you may now feel that actions do not live alone.
 
 They live inside an execution story.
 

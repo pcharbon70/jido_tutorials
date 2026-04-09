@@ -68,10 +68,10 @@ There is a temptation, especially in agent systems, to begin with behavior that 
 
 But impressive is not the same as clear.
 
-A first action should be almost boring.
+A first action can be pleasantly simple.
 
-That is not a weakness.
-That is good teaching.
+That simplicity is useful.
+It gives the shape of the action room to stand out.
 
 If the first action is small enough, then the learner can notice the shape around the behavior:
 
@@ -151,17 +151,15 @@ defmodule JidoPlayground.Actions.GreetVisitor do
 end
 ```
 
-If this is your first time seeing a Jido action, do not worry about memorizing every line.
+If this is your first time seeing a Jido action, there is no need to memorize every line.
 
-We only need to notice the overall shape.
+For now, it is enough to notice the overall shape.
 
 ## Step 3: Read the Shape Before Reading the Logic
 
 This is the most important move in the lesson.
 
-Do not start by reading `run/2`.
-
-Start by reading everything around it.
+It can help to read everything around `run/2` first.
 
 That is where the action begins to feel different from an ordinary function.
 
@@ -320,7 +318,7 @@ Maybe you want:
 - more tests
 - more realistic business behavior
 
-That instinct is understandable, but not helpful yet.
+That instinct is completely understandable, though it may be kinder to the learning process to stay small for one more lesson.
 
 The goal of a first action is not to be impressive.
 
@@ -399,7 +397,7 @@ That answer matters, because it tells you where the new mental model is beginnin
 
 ## What You Should Walk Away With
 
-If this lesson worked, you should now feel that an action is more than a function with a fancy wrapper.
+If this lesson landed well, you may now feel that an action is more than a function with a wrapper around it.
 
 It is a small declared capability.
 

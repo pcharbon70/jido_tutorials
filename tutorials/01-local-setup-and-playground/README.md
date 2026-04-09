@@ -25,7 +25,7 @@ Just a safe little place where each next lesson can land without chaos.
 
 That may sound small, but it matters a lot.
 
-When people skip this step, every tutorial after it feels more fragile than it should. You are never sure if a problem comes from the idea you are learning or from the setup underneath it.
+When this step gets rushed, every tutorial after it can feel more fragile than it needs to. It becomes harder to tell whether a problem comes from the idea you are learning or from the setup underneath it.
 
 So today, our job is humble on purpose:
 
@@ -109,8 +109,7 @@ You are only checking that the machine recognizes Elixir and Mix.
 
 If those commands work, we can move forward.
 
-If they do not, that is not a Jido problem yet.
-That is just the environment asking for a little care first.
+If they do not, that simply means the environment may need a little care first before the Jido-specific work begins.
 
 ## Step 1: Create a Home
 
@@ -281,9 +280,9 @@ jido_playground/
     playground_smoke_test.exs
 ```
 
-This is not impressive in the flashy sense.
+This may not look flashy.
 
-That is exactly why it is good.
+That is part of what makes it so useful.
 
 It tells us:
 
@@ -316,8 +315,8 @@ If we pull too many later concepts into the room too early, the setup becomes no
 
 So restraint is part of the design.
 
-This lesson is successful if the project feels calm and ready.
-Not if it feels complete.
+This lesson has done its job if the project feels calm and ready.
+It does not need to feel complete yet.
 
 ## A Helpful Mindset for the Whole Series
 
@@ -375,7 +374,7 @@ The point is to notice what made the project start to feel real.
 
 ## What You Should Walk Away With
 
-If this lesson worked, you should now have a small local sandbox that feels ready rather than empty.
+If this lesson landed well, you should now have a small local sandbox that feels ready rather than empty.
 
 More importantly, you should feel the logic of the structure:
 
