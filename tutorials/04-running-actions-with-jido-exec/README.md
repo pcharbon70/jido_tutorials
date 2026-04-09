@@ -56,6 +56,12 @@ That is why this lesson belongs here.
 
 We have now reached the point where the action is trustworthy enough to deserve a real execution story.
 
+One small but important point to make explicit:
+
+`Jido.Exec` does not replace the action's `run/2`.
+
+It is the layer that prepares and manages execution around that callback, and then executes the action through its `run/2` function.
+
 ## Why Not Just Call `run/2` Forever
 
 This is a helpful question to ask early.
@@ -148,6 +154,11 @@ That is a small shift in syntax and a big shift in meaning.
 
 The action remains the capability.
 `Jido.Exec` becomes the runtime path.
+
+In other words:
+
+- the action still owns `run/2`
+- `Jido.Exec` is what calls that `run/2` in a fuller runtime context
 
 ## Step 3: Notice What the Runtime Is Quietly Doing
 
@@ -335,7 +346,36 @@ Cancellation lets the runtime say:
 
 That is a much healthier story than letting abandoned work drift on without purpose.
 
-## Step 8: Retries and Backoff Are Runtime Concerns Too
+## Step 8: Add a Small Telemetry Hook
+
+The official `jido_action` docs also show that actions emit telemetry events.
+
+That means the runtime can tell the rest of the system that an action finished, how long it took, and what metadata came with it.
+
+For a beginner lesson, the easiest way to feel this is to attach one tiny handler:
+
+```elixir
+:telemetry.attach(
+  "playground-action-stop",
+  [:jido, :action, :stop],
+  fn _event, _measurements, metadata, _config ->
+    Logger.info("Action completed: #{metadata.action}")
+  end,
+  %{}
+)
+```
+
+You could place that in a temporary IEx session while experimenting, or in a small setup area for the playground if you want to observe action execution during development.
+
+The point of the example is not to build a full observability system yet.
+
+It is simply to notice that action execution is visible.
+
+That matters because once actions become workflows, background jobs, or agent tools, being able to observe them stops being optional.
+
+And again, this belongs in the runtime story around the action, not inside every action's core logic.
+
+## Step 9: Retries and Backoff Are Runtime Concerns Too
 
 The `Jido.Exec` docs also describe execution options like:
 
@@ -371,7 +411,7 @@ execution policy sits around the action, not inside every action.
 
 That is a very useful design boundary.
 
-## Step 9: Add Small Tests or Runnable Examples
+## Step 10: Add Small Tests or Runnable Examples
 
 Now let us turn the ideas into something the learner can actually run.
 
@@ -430,6 +470,7 @@ On the surface, this lesson is about a few functions:
 - `await/1`
 - `await/2`
 - `cancel/1`
+- `:telemetry.attach/4`
 
 But underneath that, it is teaching something more important:
 
